@@ -1,0 +1,19 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.auto.service:auto-service:1.0-rc6'
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
+
+    compileOnly 'com.google.android:android:4.1.1.4'
+
+    implementation 'com.squareup:javapoet:1.13.0'
+    implementation  project(path: ':lib-k2router')
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+    sourceCompatibility = "8"
+    targetCompatibility = "8"
+}
+
